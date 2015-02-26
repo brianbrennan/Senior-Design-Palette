@@ -1,7 +1,7 @@
 {
   "name": "Senrior-Design-Pallette",
   "version": "0.1.0",
-  "description": "Stonehill Senior Design Annual",
+  "description": "Stonehill Senior Design Annual 2015",
   "author": "Brian Brennan <me@brianbrennan.com>",
   "devDependencies": {
     "gulp": "^3.8.10",
