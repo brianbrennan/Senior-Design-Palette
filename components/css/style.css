@@ -1,5 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
 .wrapper {
-  max-width: 80%;
+  max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
 }

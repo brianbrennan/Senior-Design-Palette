@@ -49,3 +49,5 @@ ftpsync.settings
 *.scssc
 
 node_modules/
+components/css/style.css
+components/temp/style.css

@@ -1,12 +1,43 @@
+
 @import 'susy';
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+
+//----------------------------------------VARIABLES---------------------------
+
+//----------------------------------------Colors------------------------------
+
+$black					:#000;
+$white					:#FFF;
+$aquamarine 			:#9EC6D9;
+$scuba-blue             :#00B3CB;
+$lucite-green           :#7ECBB4;
+$classic-blue           :#1B4F8B;
+$toasted-almond         :#D3B39A;
+$strawberry-ice         :#E4868F;
+$tangerine              :#F89357;
+$custard                :#EADA8B;
+$marsala                :#955352;
+$glacier-gray           :#C5CBCC;
+$dusk-blue              :#7DA1BF;
+$treetop                :#4E6F39;
+$woodbine               :#7E8040;
+$sandstone              :#C88E6C;
+$titanium               :#898889;
+$lavender-herb          :#B38FB0;
+$lime-green             :#7AAA40;
+$dark-red               :#563345;
 
 
 
-$black		:#000;
-$white		:#FFF;
+//----------------------------------------Fonts------------------------------
 
+$mainFont : 'PT Sans', sans-serif;
+
+
+
+//----------------------------------------STYLES------------------------------
 
 .wrapper{
-	@include container(80%);
+	@include container(1140px);
 }
 
