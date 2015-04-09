@@ -71,9 +71,6 @@ body {
   clear: both;
 }
 
-.top {
-  margin: 15px 0;
-}
 .top nav ul {
   width: 49.15254%;
   float: right;
@@ -83,9 +80,6 @@ body {
   width: 23.72881%;
   float: left;
   margin-right: 1.69492%;
-  text-align: center;
-  font-weight: 700;
-  text-transform: uppercase;
 }
 .top nav ul li:last-child {
   float: right;
