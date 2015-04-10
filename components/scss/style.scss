@@ -1,65 +1,10 @@
-<<<<<<< Updated upstream
+
 
 @import 'susy';
 @import 'breakpoint';
+@import 'bourbon';
+@import 'mixins';
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
-
-//----------------------------------------VARIABLES---------------------------
-
-$susy: (
-	columns: 12,
-	gutters: 1/4,
-	gutter-position: after
-);
-//----------------------------------------Colors------------------------------
-
-$black					:#000;
-$white					:#FFF;
-$aquamarine 			:#9EC6D9;
-$scuba-blue             :#00B3CB;
-$lucite-green           :#7ECBB4;
-$classic-blue           :#1B4F8B;
-$toasted-almond         :#D3B39A;
-$strawberry-ice         :#E4868F;
-$tangerine              :#F89357;
-$custard                :#EADA8B;
-$marsala                :#955352;
-$glacier-gray           :#C5CBCC;
-$dusk-blue              :#7DA1BF;
-$treetop                :#4E6F39;
-$woodbine               :#7E8040;
-$sandstone              :#C88E6C;
-$titanium               :#898889;
-$lavender-herb          :#B38FB0;
-$lime-green             :#7AAA40;
-$dark-red               :#563345;
-
-
-
-//----------------------------------------Fonts-----------------------------
-
-$main-font : 'PT Sans', sans-serif;
-
-//----------------------------------------Sizing----------------------------
-
-$mainFontSize		:16px;
-$smallFontSize		:14px;
-$miniFontSize		:12px;
-$mediumFontSize		:20px;
-$bigFontSize		:28px; 
-$largeFontSize		:40px;
-
-//----------------------------------------Spacing----------------------------
-
-$mic			:3px;
-$tny			:7px;
-$sm 			:15px;
-$reg			:30px;
-$med 			:45px;
-$lg 			:60px;
-$xlg			:120px;
-
-
 //----------------------------------------Reset------------------------------
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -111,6 +56,62 @@ table {
 	border-spacing: 0;
 }
 
+//----------------------------------------VARIABLES---------------------------
+
+$susy: (
+	columns: 12,
+	gutters: 3,
+	gutter-position: after
+);
+//----------------------------------------Colors------------------------------
+
+$black					:#000;
+$white					:#FFF;
+$aquamarine 			:#9EC6D9;
+$scuba-blue             :#00B3CB;
+$lucite-green           :#7ECBB4;
+$classic-blue           :#1B4F8B;
+$toasted-almond         :#D3B39A;
+$strawberry-ice         :#E4868F;
+$tangerine              :#F89357;
+$custard                :#EADA8B;
+$marsala                :#955352;
+$glacier-gray           :#C5CBCC;
+$dusk-blue              :#7DA1BF;
+$treetop                :#4E6F39;
+$woodbine               :#7E8040;
+$sandstone              :#C88E6C;
+$titanium               :#898889;
+$lavender-herb          :#B38FB0;
+$lime-green             :#7AAA40;
+$dark-red               :#563345;
+
+
+
+//----------------------------------------Fonts-----------------------------
+
+$main-font : 'PT Sans', sans-serif;
+
+//----------------------------------------Sizing----------------------------
+
+$mainFontSize		:16px;
+$smallFontSize		:14px;
+$miniFontSize		:12px;
+$mediumFontSize		:20px;
+$bigFontSize		:28px; 
+$largeFontSize		:40px;
+
+//----------------------------------------Spacing----------------------------
+
+$mic			:3px;
+$tny			:7px;
+$sm 			:15px;
+$reg			:30px;
+$med 			:45px;
+$lg 			:60px;
+$xlg			:150px;
+
+
 
 
 //----------------------------------------STYLES------------------------------
@@ -119,43 +120,152 @@ body{
 	background: $white;
 	font-family:$main-font;
 	line-height:1.5;
+	font-size:$smallFontSize;
+}
+
+a{
+	color:inherit;
+	text-decoration:none;
+	width:auto;
 }
 
 .wrapper{
 	@include container(1140px);
 }
 
+.clear{
+	height:$reg;
+	clear:both;
+}
+
 .top{
+	padding:$sm 0;
+	position:fixed;
+	width:100%;
+	background:$white;
+
+	.logo{
+		background:url('../img/logo.png');
+		float:left;
+		width:$xlg;
+		height:$lg;
+		vertical-align: middle;
+	}
 
 	
 	nav{
 		ul{
 			@include span(6 omega);
-
 			li{
 				@include span(3);
+				vertical-align: middle;
+				font-weight:700;
+				text-transform:uppercase;
+				font-size:$mainFontSize;
+				@include transition(.2s);
+				margin-top:$sm;
 			}
 
 			li:last-child{@include last();}
+
+			li:nth-child(1):hover{color:$classic-blue}
+			li:nth-child(2):hover{color:$strawberry-ice}
+			li:nth-child(3):hover{color:$treetop}
+			li:nth-child(4):hover{color:$tangerine}
 		}
 	}
 }//.top
 
-=======
-//---------Variables----------//
+.hero{
+	height:100vh;
+}//.hero
 
+.about{
+	padding:$reg 0;
 
+	h3{
+		text-align:center;
+		font-size:$bigFontSize;
+		margin:$sm 0 $lg 0;
+		text-transform:uppercase;
+		font-weight:700;
+	}
 
-//------Colors-----//
+	p{
+		margin:$reg 0;
+		width:50%;
+	}
 
-$aquamarine: #9EC6D9;
-$scubaBlue: #00B3CB;
-$luciteGreen: #7ECBB4;
+	img{
+		float:right;
+	}
 
+}//.about
 
+.gallery{
+	padding:$reg 0;
 
-body{
-	background:$aquamarine;
+	h3{
+		text-align:center;
+		font-size:$bigFontSize;
+		margin:$sm 0 $lg 0;
+		text-transform:uppercase;
+		font-weight:700;
+	}
+
+	.image{
+		@include span(2);
+		
+		img{
+			border:1px solid $black;
+			height:100px;
+			width:100px;
+		}
+	}
+
+	.image:nth-child(6n){
+		@include last();
+	}
 }
 
->>>>>>> Stashed changes
+.students{
+	padding:$reg 0;
+
+	h3{
+		text-align:center;
+		font-size:$bigFontSize;
+		margin:$sm 0 $lg 0;
+		text-transform:uppercase;
+		font-weight:700;
+	}
+
+	.profile{
+		@include span(3);
+		margin-top:8%;
+
+		img{
+			border:1px solid $black;
+			height:200px;
+			width:200px;
+		}
+	}
+
+	.profile:nth-child(4n){ @include last();}
+
+	.last{
+
+		img{border:none;}
+	}
+}//.students
+
+.contact{
+	padding:$reg 0;
+
+	h3{
+		text-align:center;
+		font-size:$bigFontSize;
+		margin:$sm 0 $lg 0;
+		text-transform:uppercase;
+		font-weight:700;
+	}
+}
