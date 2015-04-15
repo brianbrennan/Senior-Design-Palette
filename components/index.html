@@ -18,6 +18,25 @@
 <body>
 
 	<div class="overlay">
+
+		<div class="pane">
+<!-- 			<span class="x">X</span>
+			<div class="image">
+				
+			</div>
+
+			<div class="paneContent">
+				<h3>Title</h3>
+				<span>Category</span>
+				<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam molestiae veniam incidunt atque expedita maxime eligendi. Itaque voluptates sint, optio cumque totam, commodi, officia doloremque sunt aliquid perspiciatis aspernatur blanditiis?</p>
+				<span class="next">Next</span>
+				<span class="previous">Previous</span>
+			</div> -->
+
+			<div class="image">
+				
+			</div>
+		</div>
 	</div>
 	<header class="top">
 
@@ -33,6 +52,8 @@
 				</ul>
 			</nav>
 		</div>
+
+		<div class="progress"></div>
 	</header>
 
 	<div class="hero" id="index">
@@ -57,16 +78,7 @@
 		<div class="wrapper" id="gallery">
 			<div class="gallery">
 				<h3>/Gallery</h3>
-				<div class="image"><img src="" alt="" value="1" onClick="showOverlay(1)"></div>
-				<div class="image"><img src="" alt="" value="2" onClick="showOverlay(2)"></div>
-				<div class="image"><img src="" alt="" value="3" onClick="showOverlay(3)"></div>
-				<div class="image"><img src="" alt="" value="4" onClick="showOverlay(4)"></div>
-				<div class="image"><img src="" alt="" value="5" onClick="showOverlay(5)"></div>
-				<div class="image"><img src="" alt="" value="6" onClick="showOverlay(6)"></div>
-				<div class="image"><img src="" alt="" value="7" onClick="showOverlay(7)"></div>
-				<div class="image"><img src="" alt="" value="8" onClick="showOverlay(8)"></div>
-				<div class="image"><img src="" alt="" value="9" onClick="showOverlay(9)"></div>
-				<div class="image"><img src="" alt="" value="10" onClick="showOverlay(10)"></div>
+				
 				<div class="clear"></div>
 			</div>	
 		</div>
@@ -99,28 +111,120 @@
 		<div class="wrapper" id="contact">
 			<div class="contact">
 				<h3>/Contact</h3>
-
+				
 			</div>
 		</div>
 	</div>
 
 	<script>
-	// $(document).ready(function(){
-	// 	var height = $('.hero').height();
+	$(document).ready(function(){
 
-	// 	$(document).scroll(function(){
-	// 		var n = $(document).scrollTop()
-			
-	// 		if(n >= height - 90){
-	// 			$(".top").addClass('low');
-	// 		}
-	// 		else if(n < height - 90){
-	// 			$(".top").removeClass('low');
-	// 		}
+		getColor();
+
+		$(document).scroll(function(){
+			progress();
+		});
+
+		// $('.gallery .image').hover(function(){
+		// 	var v = $(this).attr('value');
+		// 	$(' .color').css({
+		// 				'visibility':'visible',
+		// 				'background':colors[v],
+		// 				'opacity': '0.3'
+		// 	});
+		// },function(){
+		// 	var v = $(this).attr('value');
+		// 	$(' .color').css({
+		// 				'visibility':'hidden',
+		// 				'background':'none',
+		// 				'opacity': '0'
+		// 	});
+		// });
+	});
+
+	function progress(){
+		var B = document.body,
+			H = document.documentElement,
+			height;
+
+		if (typeof document.height !== 'undefined') {
+    		height = document.height // For webkit browsers
+		} else {
+			height = Math.max( B.scrollHeight, B.offsetHeight,H.clientHeight, H.scrollHeight, H.offsetHeight );
+		}
+
+		var docPos = $(document).scrollTop();
+
+		var progress = 116 * (docPos / height);
+
+		$('.progress').css('width', (progress + '%'));
+
+	}
+
+	var colors = [
+			"#9EC6D9",
+			"#00B3CB",
+			"#7ECBB4",
+			"#1B4F8B",
+			"#D3B39A",
+			"#E4868F",
+			"#F89357",
+			"#EADA8B",
+			"#955352",
+			"#C5CBCC",
+			"#7DA1BF",
+			"#4E6F39",
+			"#7E8040",
+			"#C88E6C",
+			"#898889",
+			"#B38FB0",
+			"#7AAA40",
+			"#563345"
+		];
 
 
-	// 	});
-	// });
-	</script>
+	function getColor(){
+
+		var r = Math.floor(Math.random() * 18);
+
+		console.log(colors[r]);
+
+		$('.progress').css('background',colors[r]);
+		$('nav ul li').hover(function(){
+			$(this).css('color',colors[r]);
+		},function(){
+			$(this).css('color','#000');
+		});
+	}
+
+	// function getColor(n){
+	// 	var colors = [
+	// 		"#9EC6D9",
+	// 		"#00B3CB",
+	// 		"#7ECBB4",
+	// 		"#1B4F8B",
+	// 		"#D3B39A",
+	// 		"#E4868F",
+	// 		"#F89357",
+	// 		"#EADA8B",
+	// 		"#955352",
+	// 		"#C5CBCC",
+	// 		"#7DA1BF",
+	// 		"#4E6F39",
+	// 		"#7E8040",
+	// 		"#C88E6C",
+	// 		"#898889",
+	// 		"#B38FB0",
+	// 		"#7AAA40",
+	// 		"#563345"
+	// 	]
+
+	// 	return colors[n];
+	// }
+
+
+
+
+</script>
 </body>
 </html>

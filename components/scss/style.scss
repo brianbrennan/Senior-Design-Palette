@@ -10,59 +10,59 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
-*/
+   */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+   html, body, div, span, applet, object, iframe,
+   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+   a, abbr, acronym, address, big, cite, code,
+   del, dfn, em, img, ins, kbd, q, s, samp,
+   small, strike, strong, sub, sup, tt, var,
+   b, u, i, center,
+   dl, dt, dd, ol, ul, li,
+   fieldset, form, label, legend,
+   table, caption, tbody, tfoot, thead, tr, th, td,
+   article, aside, canvas, details, embed, 
+   figure, figcaption, footer, header, hgroup, 
+   menu, nav, output, ruby, section, summary,
+   time, mark, audio, video {
+   	margin: 0;
+   	padding: 0;
+   	border: 0;
+   	font-size: 100%;
+   	font: inherit;
+   	vertical-align: baseline;
+   }
+   /* HTML5 display-role reset for older browsers */
+   article, aside, details, figcaption, figure, 
+   footer, header, hgroup, menu, nav, section {
+   	display: block;
+   }
+   body {
+   	line-height: 1;
+   }
+   ol, ul {
+   	list-style: none;
+   }
+   blockquote, q {
+   	quotes: none;
+   }
+   blockquote:before, blockquote:after,
+   q:before, q:after {
+   	content: '';
+   	content: none;
+   }
+   table {
+   	border-collapse: collapse;
+   	border-spacing: 0;
+   }
 
 //----------------------------------------VARIABLES---------------------------
 
 $susy: (
 	columns: 12,
-	gutters: 3,
-	gutter-position: after
-);
+	gutters: 1,
+	gutter-position:split
+	);
 //----------------------------------------Colors------------------------------
 
 $black					:#000;
@@ -111,7 +111,11 @@ $med 			:45px;
 $lg 			:60px;
 $xlg			:150px;
 
+//----------------------------------------Breakpoint--------------------------
 
+$desk		:1050px;
+$midSize	:700px 1049px;
+$smallSize 	:0 699px;
 
 
 //----------------------------------------STYLES------------------------------
@@ -129,10 +133,6 @@ a{
 	width:auto;
 }
 
-img{
-	cursor:pointer;
-}
-
 .wrapper{
 	@include container(1140px);
 }
@@ -141,6 +141,23 @@ img{
 	height:$reg;
 	clear:both;
 }
+
+.progress{
+	height:$tny;
+	background:$titanium;
+	margin-bottom:-($sm);
+	margin-top:$sm;
+	width:0px;
+}
+
+// .color{
+// 	// opacity:0.6;
+// 	@include transition(0.3s);
+// 	visibility: hidden;
+// 	position:absolute;
+// 	width:100%;
+// 	height:100%;
+// }
 
 .overlay{
 	background:rgba(0, 0, 0,.9);
@@ -160,6 +177,58 @@ img{
 	margin:0;
 	filter:blur(5px);
 	position:fixed;
+
+	.pane{
+		max-width:1400px;
+		height:80vh;
+		margin:10vh auto;
+		background:$white;
+		line-height:80vh;
+		padding:$reg;
+
+		.x{
+			font-weight:bold;
+			float:right;
+			vertical-align:baseline;
+			cursor:pointer;
+			line-height:1;
+			clear:both;
+			font-size:$largeFontSize;
+			margin-bottom:$reg;
+		}
+
+		img{
+			max-height:70vh;
+			vertical-align: middle;
+		}
+
+		.image{
+			display:inline-block;
+			float:left;
+		}
+
+		.paneContent{
+			line-height:1.5;
+			vertical-align: baseline;
+			text-align:right;
+			float:right;
+			clear:right;
+			width:300px;
+		}
+
+		.next,.previous{
+			cursor:pointer;
+			position:absolute;
+			bottom:$med;
+			margin-left:-($reg);
+			display:inline-block;
+			font-weight:bold;
+		}
+
+		.next{
+			margin-left:-($xlg - $sm)		
+		}
+	}
 }
 
 .top{
@@ -175,28 +244,71 @@ img{
 		width:$xlg;
 		height:$lg;
 		vertical-align: middle;
+		margin-left:2%;
 	}
 
 	
 	nav{
 		ul{
-			@include span(6 omega);
-			li{
-				@include span(3);
-				vertical-align: middle;
-				font-weight:700;
-				text-transform:uppercase;
-				font-size:$mainFontSize;
-				@include transition(.2s);
-				margin-top:$sm;
-			}
+			@include breakpoint($desk){
+				@include span(6 omega);
+				li{
+					@include span(3);
+					vertical-align: middle;
+					font-weight:700;
+					text-transform:uppercase;
+					font-size:$mainFontSize;
+					@include transition(.2s);
+					margin-top:$sm;
+				}
 
-			li:last-child{@include last();}
+				li:last-child{@include last();}
 
-			li:nth-child(1):hover{color:$classic-blue}
-			li:nth-child(2):hover{color:$strawberry-ice}
-			li:nth-child(3):hover{color:$treetop}
-			li:nth-child(4):hover{color:$tangerine}
+				// li:nth-child(1):hover{color:$classic-blue}
+				// li:nth-child(2):hover{color:$strawberry-ice}
+				// li:nth-child(3):hover{color:$treetop}
+				// li:nth-child(4):hover{color:$tangerine}
+			}//end of first breakpoint
+
+			@include breakpoint($midSize){
+				@include span(9 omega);
+				li{
+					@include span(3);
+					vertical-align: middle;
+					font-weight:700;
+					text-transform:uppercase;
+					font-size:$mainFontSize;
+					@include transition(.2s);
+					margin-top:$sm;
+				}
+
+				li:last-child{@include last();}
+
+				// li:nth-child(1):hover{color:$classic-blue}
+				// li:nth-child(2):hover{color:$strawberry-ice}
+				// li:nth-child(3):hover{color:$treetop}
+				// li:nth-child(4):hover{color:$tangerine}
+			}//end of second breakpoint
+
+			@include breakpoint($smallSize){
+				@include span(11 omega);
+				li{
+					@include span(3);
+					vertical-align: middle;
+					font-weight:700;
+					text-transform:uppercase;
+					font-size:$mainFontSize;
+					@include transition(.2s);
+					margin-top:$sm;
+				}
+
+				li:last-child{@include last();}
+
+				// li:nth-child(1):hover{color:$classic-blue}
+				// li:nth-child(2):hover{color:$strawberry-ice}
+				// li:nth-child(3):hover{color:$treetop}
+				// li:nth-child(4):hover{color:$tangerine}
+			}//end of second breakpoint
 		}
 	}
 }//.top
@@ -218,18 +330,48 @@ img{
 		font-weight:700;
 	}
 
-	p{
-		margin:$reg 0;
-		width:50%;
-		display:inline-block;
-	}
+	@include breakpoint($desk){
 
-	img{
-		display:inline-block;
-		float:right;
-		margin-top:-($xlg);
+		p{
+			margin:$reg 0;
+			@include span(7);
+			display:inline-block;
+		}
 
-	}
+		img{
+			display:inline-block;
+			float:right;
+			margin-top:-($xlg + $sm);
+			margin-right:2%;
+
+		}
+	}//end of first breakpoint
+
+	@include breakpoint($midSize){
+		p{
+			margin:$reg 0;
+			@include span(7);
+			display:inline-block;
+		}
+
+		img{
+			display:inline-block;
+			margin-top:-($xlg + $sm);
+			@include span(4 omega);
+		}
+	}//end of second breakpoint
+
+	@include breakpoint($smallSize){
+		p{
+			margin:$reg 0;
+			@include span(12 2);
+			display:inline-block;
+		}
+
+		img{
+			display:none;
+		}
+	}//end of second breakpoint
 
 }//.about
 
@@ -243,20 +385,76 @@ img{
 		text-transform:uppercase;
 		font-weight:700;
 	}
+	@include breakpoint($desk){
 
-	.image{
-		@include span(2);
-		
-		img{
-			border:1px solid $black;
-			height:100px;
-			width:100px;
-		}
-	}
+		.image{
+			@include span(3);
+			text-align:center;
+			height:320px;
+			line-height:320px; //trick that will vertically center images
+			// padding: 0 $reg;
+			margin-bottom:$reg;
+			cursor:pointer;
+			// border:1px solid $glacier-gray;
+			box-sizing:border-box;
+			box-shadow: rgba(0,0,0,0.5) 0px 0px 5px;
 
-	.image:nth-child(6n){
-		@include last();
-	}
+			img{
+				// border:1px solid $black;
+				width:150px;
+				vertical-align: middle;
+			}	
+		}	
+	}//end of first breakpoint
+	@include breakpoint($midSize){
+
+		.image{
+			@include span(4);
+			text-align:center;
+			height:320px;
+			line-height:320px; //trick that will vertically center images
+			// padding: 0 $reg;
+			margin-bottom:$reg;
+			cursor:pointer;
+			// border:1px solid $glacier-gray;
+			box-sizing:border-box;
+			box-shadow: rgba(0,0,0,0.5) 0px 0px 5px;
+
+
+			img{
+				// border:1px solid $black;
+				width:150px;
+				vertical-align: middle;
+			}	
+		}	
+	}//end of second breakpoint
+
+	@include breakpoint($smallSize){
+
+		.image{
+			@include span(6);
+			text-align:center;
+			height:320px;
+			line-height:320px; //trick that will vertically center images
+			// padding: 0 $reg;
+			margin-bottom:$reg;
+			cursor:pointer;
+			// border:1px solid $glacier-gray;
+			box-sizing:border-box;
+			box-shadow: rgba(0,0,0,0.5) 0px 0px 5px;
+
+
+			img{
+				// border:1px solid $black;
+				width:200px;
+				vertical-align: middle;
+			}	
+		}	
+	}//end of second breakpoint
+
+	// .image:nth-child(4n){
+	// 	@include last();
+	// }
 }
 
 .students{
@@ -272,12 +470,13 @@ img{
 
 	.profile{
 		@include span(3);
-		margin-top:8%;
+		margin-top:$lg;
+		text-align:center;
 
 		img{
-			border:1px solid $black;
 			height:200px;
 			width:200px;
+			box-shadow: rgba(0,0,0,0.5) 0px 0px 5px;
 		}
 	}
 

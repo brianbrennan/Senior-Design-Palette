@@ -1,18 +1,15 @@
 $(document).ready(function(){
-  $('#contactButton').click(function(){
-    showOverlay();
-  });
-  $('.overlay form span').click(function(){
+  $('.overlay span').click(function(){
     hideOverlay();
   });
   $('.overlay').click(function(){
     hideOverlay();
   });
-  $('.overlay form').click(function(){
+  $('.overlay .pane .x').click(function(){
+    hideOverlay();
+  })
+  $('.overlay .pane').click(function(){
     event.stopPropagation();
-  });
-  $('#submit').click(function(){
-    formSubmit();
   });
   
 });
@@ -26,6 +23,7 @@ function showOverlay(){
 function hideOverlay(){
   $('.overlay').css('opacity','0');
   $('.overlay').css('visibility','hidden');
+  console.log($('.overlay .pane img').width());
 }
 
 
