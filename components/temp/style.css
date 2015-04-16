@@ -140,7 +140,7 @@ a {
   vertical-align: middle;
 }
 .overlay .pane .image {
-  width: 100%;
+  width: 700%;
   text-align: center;
   float: left;
   margin-top: -50px;
@@ -264,7 +264,7 @@ a {
 
 .hero {
   height: 100vh;
-  background: url("../img/bg.jpg");
+  background: url("../img/bg-2.jpg");
   background-size: 100% auto;
   background-position: 50% -50%;
 }
