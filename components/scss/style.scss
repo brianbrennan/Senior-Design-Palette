@@ -118,6 +118,7 @@ $midSize	:700px 1049px;
 $smallSize 	:0 699px;
 
 
+
 //----------------------------------------STYLES------------------------------
 
 body{
@@ -559,4 +560,56 @@ a{
 h6{
 	font-size: $miniFontSize;
 	text-align:center;
+}
+
+
+//ios vh fix
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait){
+  .hero {
+    height: 1024px;
+  }
+
+  .overlay{
+  	height: 819px;
+  }
+
+  .pane{
+  	height:717px;
+  }
+}
+ 
+/** 
+ * iPad with landscape orientation.
+ */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape){
+  .hero {
+    height: 768px;
+  }
+
+  .overlay{
+  	height: 615px;
+  }
+
+  .pane{
+  	height:537px;
+  }
+}
+ 
+/**
+ * iPhone 5
+ * You can also target devices with aspect ratio.
+ */
+@media screen and (device-aspect-ratio: 40/71) {
+  .hero {
+    height: 500px;
+  }
+
+    .overlay{
+  	height: 400px;
+  }
+
+  .pane{
+  	height:350px;
+  }
 }
