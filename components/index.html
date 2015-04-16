@@ -14,27 +14,26 @@
 	<script src="js/smooth-scroll.js"></script>
 	<script src="js/work.js"></script>
 	<script src="js/overlay.js"></script>
+	<script src="js/students.js"></script>
 </head>
 <body>
 
 	<div class="overlay">
 
 		<div class="pane">
-<!-- 			<span class="x">X</span>
+			<span class="x">X</span>
 			<div class="image">
 				
 			</div>
-
-			<div class="paneContent">
-				<h3>Title</h3>
-				<span>Category</span>
-				<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam molestiae veniam incidunt atque expedita maxime eligendi. Itaque voluptates sint, optio cumque totam, commodi, officia doloremque sunt aliquid perspiciatis aspernatur blanditiis?</p>
-				<span class="next">Next</span>
-				<span class="previous">Previous</span>
-			</div> -->
-
-			<div class="image">
-				
+			<div class="rightPane">
+				<div class="paneContent">
+					<h3 class="title">Title</h3>
+					<h4 class="designer">Designer</h4>
+					<span class="client">Client</span>
+					<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam molestiae veniam incidunt atque expedita maxime eligendi. Itaque voluptates sint, optio cumque totam, commodi, officia doloremque sunt aliquid perspiciatis aspernatur blanditiis?</p>
+					<div class="colorSquare"></div>
+				</div>
+				<div class="clear"></div>
 			</div>
 		</div>
 	</div>
@@ -86,24 +85,6 @@
 		<div class="wrapper" id="students">
 			<div class="students">
 				<h3>/Students</h3>
-				<div class="profile"><img src="" alt="" onClick="showOverlay(1)"></div>
-				<div class="profile"><img src="" alt="" onClick="showOverlay(2)"></div>
-				<div class="profile"><img src="" alt="" onClick="showOverlay(3)"></div>
-				<div class="profile"><img src="" alt="" onClick="showOverlay(4)"></div>
-				<div class="profile"><img src="" alt="" onClick="showOverlay(5)"></div>
-				<div class="profile"><img src="" alt="" onClick="showOverlay(6)"></div>
-				<div class="profile"><img src="" alt="" onClick="showOverlay(7)"></div>
-				<div class="profile"><img src="" alt="" onClick="showOverlay(8)"></div>
-				<div class="profile"><img src="" alt="" onClick="showOverlay(9)"></div>
-				<div class="profile"><img src="" alt="" onClick="showOverlay(10)"></div>
-				<div class="profile"><img src="" alt="" onClick="showOverlay(11)"></div>
-				<div class="profile"><img src="" alt="" onClick="showOverlay(12)"></div>
-				<div class="profile"><img src="" alt="" onClick="showOverlay(13)"></div>
-				<div class="profile"><img src="" alt="" onClick="showOverlay(14)"></div>
-				<div class="profile"><img src="" alt="" onClick="showOverlay(15)"></div>
-				<div class="profile"><img src="" alt="" onClick="showOverlay(16)"></div>
-				<div class="profile"><img src="" alt="" onClick="showOverlay(17)"></div>
-				<div class="profile"><img src="" alt="" onClick="showOverlay(18)"></div>
 				<div class="clear"></div>
 			</div>
 		</div>
@@ -162,30 +143,26 @@
 	}
 
 	var colors = [
-			"#9EC6D9",
-			"#00B3CB",
-			"#7ECBB4",
-			"#1B4F8B",
-			"#D3B39A",
-			"#E4868F",
-			"#F89357",
-			"#EADA8B",
-			"#955352",
-			"#C5CBCC",
-			"#7DA1BF",
-			"#4E6F39",
-			"#7E8040",
-			"#C88E6C",
-			"#898889",
-			"#B38FB0",
-			"#7AAA40",
-			"#563345"
+			"#7DA1BF",//Dusk Blue
+			"#7E8040",//Woodbine
+			"#9EC6D9",//Aquamarine
+			"#C88E6C",//Sandstone
+			"#7ECBB4",//Lucite Green
+			"#D3B39A",//Toasted Almond
+			"#955352",//Marsala
+			"#1B4F8B",//Classic Blue
+			"#4E6F39",//Treetop
+			"#B38FB0",//Lavendar Herb
+			"#C5CBCC",//Glacier Gray
+			"#00B3CB",//Scuba Blue
+			"#F89357",//Tangerine
+			"#563345",//Sangria
 		];
 
 
 	function getColor(){
 
-		var r = Math.floor(Math.random() * 18);
+		var r = Math.floor(Math.random() * 14);
 
 		console.log(colors[r]);
 
@@ -226,5 +203,10 @@
 
 
 </script>
+<h6>
+	All Work Presented Here Designed by the Graphic Design Majors of the Stonehill Class of 2015 <br>
+	Website Designed by Brian Brennan
+
+</h6>
 </body>
 </html>

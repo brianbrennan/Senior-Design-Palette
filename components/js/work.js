@@ -103,6 +103,11 @@ function showWork(t){
 
 	$('.overlay .pane .image').append("<img src=\"" + src + "\">");
 
+	 var val = t.attr('value');
+
+
+	$('.overlay .pane .paneContent .colorSquare').css('background',colors[val]);
+
 	showOverlay();
 }
 
