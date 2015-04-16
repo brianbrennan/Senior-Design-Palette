@@ -260,7 +260,9 @@ a {
 
 .hero {
   height: 100vh;
-  background: #898889;
+  background: url("../img/bg.jpg");
+  background-size: 100% auto;
+  background-position: 50% -50%;
 }
 
 .about {
@@ -518,5 +520,3 @@ h6 {
     height: 350px;
   }
 }
-
-/*# sourceMappingURL=style.css.map */

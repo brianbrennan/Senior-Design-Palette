@@ -334,7 +334,9 @@ a{
 
 .hero{
 	height:100vh;
-	background:$titanium;
+	background:url('../img/bg.jpg');
+	background-size:100% auto;
+	background-position:50% -50%;
 }//.hero
 
 .about{
