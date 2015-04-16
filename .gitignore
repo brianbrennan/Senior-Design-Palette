@@ -51,3 +51,4 @@ ftpsync.settings
 node_modules/
 components/css/style.css
 components/temp/style.css
+components/ftpsync.settigns
