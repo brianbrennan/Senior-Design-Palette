@@ -1,67 +1,83 @@
 var work = [{
 	'name' 	: "Alex Ordway",
 	'num' 	: 5,
-	'ext'	: "Alex_Ordway"
+	'ext'	: "Alex_Ordway",
+	'link' : ""	
 },{
 	'name' : "Alexandra Goveia",
 	'num' 	: 4,
-	'ext'	: "Alexandra_Goveia"
+	'ext'	: "Alexandra_Goveia",
+	'link' : ""	
 },{
 	'name' : "Alphonse Riang",
 	'num' 	: 4,
-	'ext'	: "Alphonse_Riang"
+	'ext'	: "Alphonse_Riang",
+	'link' : ""	
 },{
 	'name' : "Andrew Ahern",
 	'num' 	: 3,
-	'ext'	: "Andrew_Ahern"	
+	'ext'	: "Andrew_Ahern",
+	'link' : "http://andrewaherndesign.wix.com/andrewaherndesign"		
 },{
 	'name' : "Angie Belcolfine",
 	'num' 	: 4,
-	'ext'	: "Angie_Belcolfine"	
+	'ext'	: "Angie_Belcolfine",
+	'link' : ""		
 },{
 	'name' : "Ashley Armstrong",
 	'num' 	: 3,
-	'ext'	: "Ashley_Armstrong"	
+	'ext'	: "Ashley_Armstrong",
+	'link' : "http://aarmstrongdesign.com"		
 },{
 	'name' : "Colleen D'Alessandro",
 	'num' 	: 4,
-	'ext'	: "Colleen_D'Alessandro"
+	'ext'	: "Colleen_D'Alessandro",
+	'link' : ""	
 },{
 	'name' : "Jaron Cote",
 	'num' 	: 3,
-	'ext'	: "Jaron_Cote"	
+	'ext'	: "Jaron_Cote",
+	'link' : ""		
 },{
 	'name' : "Jaysen Odom",
 	'num' 	: 4,
-	'ext'	: "Jaysen_Odom"	
+	'ext'	: "Jaysen_Odom",
+	'link' : ""		
 },{
 	'name' : "Jordan Harris",
 	'num' 	: 5,
-	'ext'	: "Jordan_Harris"	
+	'ext'	: "Jordan_Harris",
+	'link' : ""		
 },{
 	'name' : "Kiel Anderson",
 	'num' 	: 0,
-	'ext'	: "Kiel_Anderson"	
+	'ext'	: "Kiel_Anderson",
+	'link' : ""		
 },{
 	'name' : "Marissa Maccioli",
 	'num' 	: 5,
-	'ext'	: "Marissa_Maccioli"	
+	'ext'	: "Marissa_Maccioli",
+	'link'	: "http://marissamac.com"	
 },{
 	'name' : "Mary Heelan",
 	'num' 	: 5,
-	'ext'	: "Mary_Heelan"	
+	'ext'	: "Mary_Heelan",
+	'link' : "http://www.marycatherineheelan.com​"	
 },{
 	'name' : "Megan Knapp",
 	'num' 	: 2,
-	'ext'	: "Megan_Knapp"	
+	'ext'	: "Megan_Knapp",
+	'link' : "http://meganknapponscreen.com"		
 },{
 	'name' : "Tori Faieta",
 	'num' 	: 4,
-	'ext'	: "Tori_Faieta"	
+	'ext'	: "Tori_Faieta",
+	'link' : ""		
 },{
 	'name' : "Tricia Belden",
 	'num' 	: 4,
-	'ext'	: "Tricia_Belden"	
+	'ext'	: "Tricia_Belden",
+	'link' : ""		
 }];
 
 $(document).ready(function(){
@@ -107,6 +123,12 @@ function showWork(t){
 
 
 	$('.overlay .pane .paneContent .colorSquare').css('background',colors[val]);
+
+	$('.overlay .pane .paneContent .title').html(work[val].name);
+
+	if(work[val].link.length > 0){
+		$('.overlay .pane .paneContent .title').html("<a href=\"" + work[val].link + "\">" + work[val].name + "</a>");
+	}
 
 	showOverlay();
 }
